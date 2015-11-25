@@ -19,7 +19,17 @@ Enter automation…
 
 ## Use `launchd` to automate the process ## 
 
-[Download the launchd plist](https://raw.githubusercontent.com/tjluoma/download-daily-podcast.sh/master/com.tjluoma.download-daily-podcast.plist) and call it something. For the sake of example I will use `com.tjluoma.download-daily-podcast.plist` but you can name it literally anything you want, as long as it ends with `.plist`.
+1. [Download the launchd plist](https://raw.githubusercontent.com/tjluoma/download-daily-podcast.sh/master/com.tjluoma.download-daily-podcast.plist) and call it something. For the sake of example I will use `com.tjluoma.download-daily-podcast.plist` but you can name it literally anything you want, as long as it ends with `.plist`.
+
+2. Save it to `~/Library/LaunchAgents` where `~` is your Home directory. For example, mine is actually `/Users/luomat/Library/LaunchAgents/com.tjluoma.download-daily-podcast.plist`
+
+3. Tell `launchd` to load and run the plist:
+
+		launchctl load ~/Library/LaunchAgents/com.tjluoma.download-daily-podcast.plist
+
+That's it.
+
+## Explanation of the `launchd` plist
 
 Here’s what an example plist looks like:
 
